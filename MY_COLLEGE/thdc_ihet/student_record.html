@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        canvas {
+            max-width: 100%;
+            margin: 0 auto;
+            height: 600px; /* Adjust the height as needed */
+        }
+        #blue{
+            color:blue;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="headerContent"></div>
+ <script>
+   fetch("header.html")
+     .then(response => response.text())
+     .then(content => {
+       document.getElementById("headerContent").innerHTML = content;
+     });
+ </script>
+  <main>
+    <section>
+        <h2>Previous Semester Performance</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Semester</th>
+                    <td>Subject(Name-Marks)</td>
+                    <!-- Add subject headers dynamically -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>210970101054</td>
+                    <td>Vimal Negi</td>
+                    <td>1st sem</td>
+                    <td>[Mathematics I-<span id='blue'>62</span>,Engineering Physics-<span id='blue'>76</span>,Basic Mechanical Engineering-<span id='blue'>86</span>,Basic ELectronics Engineering-<span id='blue'>88</span>,Environmental Studies-<span id='blue'>90</span>]</td>
+
+                </tr>
+                <tr>
+                    <td>210970101054</td>
+                    <td>Vimal Negi</td>
+                    <td>2nd sem</td>
+                    <td>[Mathematics II-<span id='blue'>53</span>,Programming in C-<span id='blue'>66</span>,English for Communication-<span id='blue'>63</span>,Engineering Chemistry-<span id='blue'>38</span>,Basic Electrical Engineering-<span id='blue'>56</span>]</td>
+
+                </tr>
+                <tr>
+                    <td>210970101054</td>
+                    <td>Vimal Negi</td>
+                    <td>3rd sem</td>
+                    <td>[Data Structure-<span id='blue'>71</span>,Digital Electronics-<span id='blue'>90</span>,Discrete Structure-<span id='blue'>77</span>,Object Oriented Programming-<span id='blue'>66</span>,Evs-<span id='blue'>60</span>]</td>
+                </tr>
+                <tr>
+                    <td>210970101054</td>
+                    <td>Vimal Negi</td>
+                    <td>4th sem</td>
+                    <td>[Mathematics 3-<span id='blue'>67</span>,Theory of Automata-<span id='blue'>89</span>,DBMS-<span id='blue'>45</span>,Software Engineering-<span id='blue'>49</span>,Human Values-<span id='blue'>80</span>,Computer organisation-<span id='blue'>75</span>]</td>
+                </tr>
+                <tr>
+                    <td>210970101054</td>
+                    <td>Vimal Negi</td>
+                    <td>5th sem</td>
+                    <td>[Operating System-<span id='blue'>54</span>,Computer networks-<span id='blue'>66</span>,DAA-<span id='blue'>68</span>,Java Programming-<span id='blue'>89</span>,Cyber security-<span id='blue'>75</span>]</td>
+                </tr>
+                
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Performance Trend</h2>
+        <canvas id="performanceChart"></canvas>
+    </section>
+</main>
+
+
+
+<script>
+    const performanceChart = document.getElementById('performanceChart').getContext('2d');
+    const studentPerformanceData = {
+        labels: ['Semester 1', 'Semester 2', 'Semester 3', 'Semester 4', 'Semester 5'], // Semesters
+        datasets: [
+            // Add datasets for each subject
+            {
+                label: 'Maths 1',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                data: [
+                    62, null, null, null, null// Performance for Subject 1 in its respective semester
+                ]
+            },
+            {
+                label: 'Physics',
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                data: [
+                    76, null, null, null, null,  // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Mechanical',
+                backgroundColor: 'rgba(255, 206, 86, 0.5)',
+                data: [
+                    86, null, null, null, null,  // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Evs',
+                backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                data: [
+                    90, null, null, null, null// Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Basic Electronics',
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                data: [
+                    88, null, null, null, null,  // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Engineering Chemistry',
+                backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                data: [
+                    null, 38, null, null, null // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'English',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                data: [
+                    null, 63, null, null, null// Performance for Subject 1 in its respective semester
+                ]
+            },
+            {
+                label: 'Mathematics II',
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                data: [
+                    null, 53, null, null, null,  // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Programming in C',
+                backgroundColor: 'rgba(255, 206, 86, 0.5)',
+                data: [
+                    null, 66, null, null, null // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Basic Electrical',
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                data: [
+                    null, 56, null, null, null, // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Data Structure',
+                backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                data: [
+                    null, null, 71, null, null// Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Discrete Structure',
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                data: [
+                    null, null, 77, null, null,  // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Object oriented Programming',
+                backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                data: [
+                    null, null, 60, null, null // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Digital Electronics',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                data: [
+                    null, null, 90, null, null// Performance for Subject 1 in its respective semester
+                ]
+            },
+            {
+                label: 'Enivironmental',
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                data: [
+                    null, null, 66, null, null,  // Performance for Subject 2 in its respective semester
+                ]
+            },
+             {
+                label: 'Human Values',
+                backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                data: [
+                    null, null, null, 80, null// Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Computer organisation and Architecture',
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                data: [
+                    null, null, null, 75, null,  // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Software Engineering',
+                backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                data: [
+                    null, null, null, 49, null // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'DBMS',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                data: [
+                    null, null, null, 45, null// Performance for Subject 1 in its respective semester
+                ]
+            },
+            {
+                label: 'Theory of Automata',
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                data: [
+                   null, null, null, 89, null,  // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Cyber Security',
+                backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                data: [
+                    null, null, null, null, 75// Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Java Programming',
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                data: [
+                    null, null, null, null, 89,  // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'DAA',
+                backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                data: [
+                    null, null, null, null, 68 // Performance for Subject 2 in its respective semester
+                ]
+            },
+            {
+                label: 'Computer Networks',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                data: [
+                    null, null, null, null, 66// Performance for Subject 1 in its respective semester
+                ]
+            },
+            {
+                label: 'Operating System',
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                data: [
+                   null, null, null, null, 54,  // Performance for Subject 2 in its respective semester
+                ]
+            },
+           
+        ]
+    };
+    const performanceChartConfig = {
+        type: 'bar',
+        data: studentPerformanceData,
+        options: {
+            scales: {
+                x: {
+                    stacked: true,
+                    title: {
+                        display: true,
+                        text: 'Semester'
+                    }
+                },
+                y: {
+                    stacked: true,
+                    title: {
+                        display: true,
+                        text: 'Total'
+                    },
+                    ticks: {
+                        callback: function(value) {
+                            return value 
+                        }
+                    }
+                }
+            }
+        }
+    };
+    new Chart(performanceChart, performanceChartConfig);
+</script>
+</body>
+</html>

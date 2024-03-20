@@ -1,0 +1,34 @@
+<html>
+   <head>
+    
+      <title>Thdc-ihet</title>
+      <link rel="icon" href="/assets/THDCIHET-LOGO.jpg" type="image/png">
+      <link rel="stylesheet" href="/style/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+<!---------- Meta HTML Ends --------->
+
+<!---------- Top Header Starts --------->
+<!-- <div class="width-100 top-header">
+    <div class="container">
+       <div class="width-100">
+          <b class="news-list"> NEWS : </b>
+          <marquee class="headquote">
+             My college: Intelligence plus curiosity-that is the root of true education.
+          </marquee>
+       </div>
+    </div>
+ </div> -->
+ <!---------- Top Header Ends --------->
+
+ <!---------- Logo And Main Menu HTML Starts --------->
+ <div id="headerContent"></div>
+ <script>
+   fetch("header.html")
+     .then(response => response.text())
+     .then(content => {
+       document.getElementById("headerContent").innerHTML = content;
+     });
+ </script>
+ <h1 style="color: blueviolet;font-size: larger;">Upadates will be released soon....</h1>

@@ -1,0 +1,215 @@
+<html>
+   <head>
+    
+      <title>Thdc-ihet</title>
+      <link rel="icon" href="/assets/THDCIHET-LOGO.jpg" type="image/png">
+      <link rel="stylesheet" href="/style/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+        form {
+            position: absolute;
+    width: 300px;
+    margin: 175px 347px;
+    border: 2px solid lightblue;
+    box-shadow: #45a049;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .user-type-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .user-type-button {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s, border-radius 0.3s;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .user-type-button:hover {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+        }
+        
+            .space {
+    padding: 41px;
+}
+form {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .user-type-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .user-type-button {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s, border-radius 0.3s;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .user-type-button:hover {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+        }
+        .top{
+            position: relative;
+            margin-top: 4px;
+            margin-left: 4px;
+        }
+        
+    </style>
+   </head>
+   <body>
+ <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(content => {
+        document.getElementById("headerContent").innerHTML = content;
+      });
+  </script>
+    <div id="headerContent"></div>
+
+    <form class="top" id="registrationForm" onsubmit="return submitForm()">
+        <h2>User Registration</h2>
+        <div class="user-type-buttons">
+            <div class="user-type-button" onclick="selectUserType('student')">Student</div>
+            <div class="user-type-button" onclick="selectUserType('faculty')">Faculty</div>
+            <div class="user-type-button" onclick="selectUserType('admin')">Admin</div>
+        </div>
+        <input type="hidden" id="userType" name="userType"> <!-- Hidden field to store selected user type -->
+        <input type="text" id="username" name="username" placeholder="Username">
+        <input type="password" id="password" name="password" placeholder="Password">
+        <div id="additionalFields">
+            <!-- Additional fields for specific user types will be added here dynamically using JavaScript -->
+        </div>
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        function selectUserType(userType) {
+            document.getElementById('userType').value = userType;
+            var additionalFields = document.getElementById('additionalFields');
+
+            // Clear previous additional fields
+            additionalFields.innerHTML = '';
+
+            // Add additional fields based on user type
+            if (userType === 'student') {
+                additionalFields.innerHTML = `
+                    <input type="text" id="studentId" name="studentId" placeholder="Student ID">
+                    <input type="text" id="major" name="major" placeholder="Major">
+                `;
+            } else if (userType === 'faculty') {
+                additionalFields.innerHTML = `
+                    <input type="text" id="facultyId" name="facultyId" placeholder="Faculty ID">
+                    <input type="text" id="department" name="department" placeholder="Department">
+                `;
+            } else if (userType === 'admin') {
+                additionalFields.innerHTML = `
+                    <input type="text" id="adminId" name="adminId" placeholder="Admin ID">
+                    <input type="text" id="role" name="role" placeholder="Role">
+                `;
+            }
+        }
+
+        function submitForm() {
+            var userType = document.getElementById('userType').value;
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Validate the form fields (you can add more validation if needed)
+
+            // Redirect users based on their selected user type
+            if (userType === 'student') {
+                // Redirect to student dashboard page
+                window.location.href = 'student_dashboard.html';
+            } else if (userType === 'faculty') {
+                // Redirect to faculty dashboard page
+                window.location.href = 'faculty_dashboard.html';
+            } else if (userType === 'admin') {
+                // Redirect to admin dashboard page
+                window.location.href = 'admin_dashboard.html';
+            }
+
+            // Prevent form submission
+            return false;
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
+

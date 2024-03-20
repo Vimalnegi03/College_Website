@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div id="headerContent"></div>
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(content => {
+      document.getElementById("headerContent").innerHTML = content;
+    });
+</script>
+    <header>
+        <h1>My Attendance</h1>
+    </header>
+    <div class="container">
+        <label for="monthSelect">Select Month:</label>
+        <select id="monthSelect" onchange="showAttendance()">
+            <!-- Month options will be dynamically added here -->
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Maths</th>
+                    <th>Physics</th>
+                    <th>Chemistry</th>
+                    <th>Physics</th>
+                    <th>Chemistry</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceRecords">
+                <!-- Attendance records will be dynamically added here -->
+            </tbody>
+        </table>
+        <p id="totalAttendance"></p>
+    </div>
+
+    <script>
+        // Dummy data for January
+        var januaryData = [
+        { date: "2024-02-01", attendance: ['P', 'A', 'P','A',"P"] },
+            // Add more dummy data for January...
+        ];
+
+        // Dummy data for February
+        var februaryData = [
+            { date: "2024-02-01", attendance: ['P', 'A', 'P','A',"P"] },
+            { date: "2024-02-02", attendance: ['P', 'P', 'P'] },
+            { date: "2024-02-01", attendance: ['P', 'A', 'P'] },
+            { date: "2024-02-02", attendance: ['P', 'P', 'P'] },
+            { date: "2024-02-01", attendance: ['P', 'A', 'P'] },
+            { date: "2024-02-02", attendance: ['P', 'P', 'P'] },
+            { date: "2024-02-01", attendance: ['P', 'A', 'P'] },
+            { date: "2024-02-02", attendance: ['P', 'P', 'P'] },
+            { date: "2024-02-01", attendance: ['P', 'A', 'P'] },
+            { date: "2024-02-02", attendance: ['P', 'P', 'P'] },
+            { date: "2024-02-01", attendance: ['P', 'A', 'P'] },
+            { date: "2024-02-02", attendance: ['P', 'P', 'P'] },
+            { date: "2024-02-01", attendance: ['P', 'A', 'P'] },
+            { date: "2024-02-02", attendance: ['P', 'P', 'P'] },
+            { date: "2024-02-01", attendance: ['P', 'A', 'P'] },
+            { date: "2024-02-02", attendance: ['P', 'P', 'P'] },
+            { date: "2024-02-01", attendance: ['P', 'A', 'P'] },
+            { date: "2024-02-02", attendance: ['P', 'P', 'P'] },
+            { date: "2024-02-01", attendance: ['P', 'A', 'P'] },
+            { date: "2024-02-02", attendance: ['P', 'P', 'P'] },
+            { date: "2024-02-01", attendance: ['P', 'A', 'P'] },
+            { date: "2024-02-02", attendance: ['P', 'P', 'P'] },
+
+            
+        ];
+
+        // Dummy data for March (up to current date)
+        var currentDate = new Date();
+        var currentDay = currentDate.getDate();
+        var marchData = [];
+        for (var i = 1; i <= currentDay; i++) {
+            var dummyAttendance = [];
+            for (var j = 0; j < 5; j++) { // Assuming 3 subjects
+                dummyAttendance.push(Math.random() < 0.5 ? 'P' : 'A'); // Randomly fill with 'P' or 'A'
+            }
+            var dateString = "2024-03-" + (i < 10 ? '0' : '') + i;
+            marchData.push({ date: dateString, attendance: dummyAttendance });
+        }
+
+        // Store dummy data for all months in local storage
+        var allMonthsData = januaryData.concat(februaryData, marchData);
+        localStorage.setItem("attendance", JSON.stringify(allMonthsData));
+
+        function populateMonthOptions() {
+            var select = document.getElementById("monthSelect");
+            var currentDate = new Date();
+
+            // Generate options for previous 6 months
+            for (var i = 0; i < 6; i++) {
+                var previousMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() - i, 1);
+                var option = document.createElement("option");
+                option.value = previousMonth.getMonth() + 1; // JavaScript months are 0-indexed
+                option.textContent = previousMonth.toLocaleString('default', { month: 'long' }) + " " + previousMonth.getFullYear();
+                select.appendChild(option);
+            }
+        }
+
+        function getDaysInMonth(month, year) {
+            return new Date(year, month, 0).getDate();
+        }
+
+        function showAttendance() {
+            var monthSelect = document.getElementById("monthSelect");
+            var selectedMonth = parseInt(monthSelect.value);
+            var table = document.getElementById("attendanceRecords");
+            var attendanceData = JSON.parse(localStorage.getItem("attendance")) || [];
+            var totalDays = 0;
+            var totalPresent = 0;
+
+            table.innerHTML = ""; // Clear previous data
+
+            // Get number of days in selected month
+            var currentYear = new Date().getFullYear();
+            var daysInMonth = getDaysInMonth(selectedMonth, currentYear);
+
+            // Fill attendance data for each day of selected month
+            for (var i = 1; i <= daysInMonth; i++) {
+                var dateString = currentYear + '-' + (selectedMonth < 10 ? '0' : '') + selectedMonth + '-' + (i < 10 ? '0' : '') + i;
+                var row = table.insertRow();
+                var cell1 = row.insertCell(0);
+                cell1.textContent = dateString;
+
+                var record = attendanceData.find(record => record.date === dateString);
+                if (record) {
+                    for (var j = 0; j < 5; j++) { // Assuming 5 subjects
+                        var cell = row.insertCell(j + 1);
+                        cell.textContent = record.attendance[j];
+                        if (record.attendance[j] === 'P') {
+                            totalPresent++;
+                        }
+                    }
+                } else {
+                    for (var j = 0; j < 5; j++) { // Assuming 5 subjects
+                        var cell = row.insertCell(j + 1);
+                        cell.textContent = ""; // No data for this date
+                    }
+                }
+                totalDays++;
+            }
+
+            // Calculate and display total
+
+//  attendance for the month
+            var totalAttendance = ((totalPresent / totalDays) * 100).toFixed(2);
+            if (isNaN(totalAttendance)) {
+                document.getElementById("totalAttendance").textContent = "Total Attendance: 0.00%";
+            } else {
+                document.getElementById("totalAttendance").textContent = "Total Attendance: " + Math.min(totalAttendance, 100) + "%";
+            }
+        }
+
+        // Populate month select options and show attendance when page loads
+        window.onload = function() {
+            populateMonthOptions();
+            showAttendance();
+        };
+    </script>
+</body>
+</html>
+```

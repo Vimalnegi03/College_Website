@@ -1,0 +1,21 @@
+<html>
+   <head>
+    
+      <title>Thdc-ihet</title>
+      <link rel="icon" href="/assets/THDCIHET-LOGO.jpg" type="image/png">
+      <link rel="stylesheet" href="/style/style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+    <!---------- Meta HTML Ends --------->
+    
+    <!---------- Top Header Starts --------->
+    <div id="headerContent"></div>
+    <script>
+      fetch("header.html")
+        .then(response => response.text())
+        .then(content => {
+          document.getElementById("headerContent").innerHTML = content;
+        });
+    </script>
+     </body>
