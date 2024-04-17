@@ -1,28 +1,30 @@
-Sure! Below is a simple design for a student dashboard page that includes attendance report and student's reports.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
-    <link rel="stylesheet" href="/style/style.css">
+
+    <link rel="stylesheet" href="/MY_COLLEGE/style/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Poppins";
             margin: 0;
             padding: 0;
+            background: #f1eef5;
         }
 
         header {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #13071d;
+            color: #c9bed6;
             padding: 20px;
             text-align: center;
         }
 
         nav {
-            background-color: #333;
+            background-color: #382bf0;
             overflow: hidden;
         }
 
@@ -31,28 +33,35 @@ Sure! Below is a simple design for a student dashboard page that includes attend
             display: block;
             color: white;
             text-align: center;
-            padding: 14px 20px;
+            padding: 14px 30px;
             text-decoration: none;
         }
 
         nav a:hover {
-            background-color: #ddd;
+            background-color: #c9bed6;
             color: black;
         }
 
         .container {
-            padding: 20px;
+            /* padding: 20px; */
+            width: 80%;
+            margin: 65px 49px 70px 120px;
+
+
         }
 
-        h2 {
-            color: #4CAF50;
+        h2, h3 {
+            color: #13071d;
+            margin-bottom: 30px;
         }
 
         .report-card {
             border: 1px solid #ddd;
             border-radius: 5px;
             padding: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0px 5px 20px 0px #000000;
+
         }
 
         .report-card h3 {
@@ -64,30 +73,33 @@ Sure! Below is a simple design for a student dashboard page that includes attend
             margin: 10px 0;
             color: #666;
         }
-        #subjectMarksChart{
-            display: block;
-    box-sizing: border-box;
-    height: 462px;
-    width: 492px;
+
+        #subjectMarksChart {
+            /* display: block; */
+            width: 40%;
+            /* box-sizing: border-box; */
+            /* height: 462px; */
+           
         }
     </style>
 </head>
+
 <body>
     <div id="headerContent"></div>
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(content => {
-      document.getElementById("headerContent").innerHTML = content;
-    });
-</script>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(content => {
+                document.getElementById("headerContent").innerHTML = content;
+            });
+    </script>
     <header>
         <h1>Student Dashboard</h1>
     </header>
     <nav>
-        <a href="/thdc_ihet/index.html">Home</a>
-        <a href="/thdc_ihet/my_attendence.html">Attendance Report</a>
-        <a href="/thdc_ihet/student_record.html">Student's Reports</a>
+        <a href="#">Home</a>
+        <a href="/MY_COLLEGE/thdc_ihet/my_attendence.html">Attendance Report</a>
+        <a href="/MY_COLLEGE/thdc_ihet/student_record.html">Student's Reports</a>
     </nav>
     <div class="container">
         <h2>Attendance Report</h2>
@@ -101,16 +113,18 @@ Sure! Below is a simple design for a student dashboard page that includes attend
         <h2>Student's Reports</h2>
         <div class="report-card">
             <h3>Final Exam Report 5 sem:</h3>
-            <p>Subject: [Operating system,computer networks,Data structure and Alogorithms,Cyber Security,java Programming]</p>
+            <p>Subject: [Operating system,computer networks,Data structure and Alogorithms,Cyber Security,java
+                Programming]</p>
             <p>Marks Obtained: [54,66,68,85,74]</p>
         </div>
         <div class="report-card">
             <h3>Midterm Exam Report</h3>
-            <p>Subject: [Operating system,computer networks,Data structure and Alogorithms,Cyber Security,java Programming]</p>
+            <p>Subject: [Operating system,computer networks,Data structure and Alogorithms,Cyber Security,java
+                Programming]</p>
             <p>Marks Obtained: [22,24,29,25,26]</p>
         </div>
     </div>
-    <canvas id="subjectMarksChart" style="display: block; box-sizing: border-box; height: 462px; width: 506px;" width="1156" height="578"></canvas>
+    <canvas id="subjectMarksChart" width="1841" height="918" style="display: block; box-sizing: border-box; height: 535px; width: 1250px;"></canvas>
 
     <script>
         // Data for subjects and marks
@@ -125,7 +139,7 @@ Sure! Below is a simple design for a student dashboard page that includes attend
                 datasets: [{
                     label: 'Marks',
                     data: marks,
-                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    backgroundColor: 'rgba(117, 85, 245, 1)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
                 }]
@@ -143,4 +157,5 @@ Sure! Below is a simple design for a student dashboard page that includes attend
         });
     </script>
 </body>
+
 </html>

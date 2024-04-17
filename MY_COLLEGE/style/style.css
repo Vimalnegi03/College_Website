@@ -4,8 +4,8 @@
     padding:0px;
 }
 body, html {
-    font-family :'Roboto', sans-serif, arial;
-    background:#f0f3fa; 
+    font-family : "Poppins";
+    background:#edecee; 
 }
 .width-100 {
     width:100%;
@@ -70,64 +70,87 @@ body, html {
 
 /********** Top Header Starts **********/  
 .top-header {
-    background:#2196f3;
-    padding:5px 0px;
+    background:#110324;
+    padding:4px 0px;
     border-bottom: 1px solid #3131315e;
+    
+
 }
 .news-list {
     background: #fff;
-    color: red;
+    color: rgb(205, 203, 211);
     padding: 6px;
     font-size: 20px;
 }
 .headquote {
     font-size:18px;
     color:#ffffff;
-    width:80%;
+    /* width:100%; */
+    margin-left: 1px; 
+        margin-right: 1px;
+    
 }
 /********** Top Header Ends **********/
 
 /********** Logo And Menu Starts **********/  
-a:hover
+
+.main-menu a:hover
 {
-    border: 4px solid #03a9f4;
-    border-radius: 20px;
-    color: red;
-    background-color: #03a9f4;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 2px;
+    color: rgb(46, 42, 117);
+    text-decoration: none;
+    /* background-color: #bbd4f9; */
+    
 }
+
 .header-menu {
-    position: relative;
-    box-shadow: 0px 2px 5px 0px #00000036;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+    /* box-shadow: 0px 2px 5px 0px #00000036; */
 }
 .logo {
-    width: fit-content;
-    float: left;
+   flex: 1;
+   padding-left: 5px;
 }
 .logo_img{
-    height:"40px"; 
-    width:"60px";
+    /* height: 100px;  */
+    width:30%;
+    height: auto;
+    margin-left: 30px;
 }
 .main-menu {
     list-style:none;
-    float:right;
+    flex: 1;
     margin-top: 20px;
 }
 .main-menu a {
-    font-weight: 500;
+    font-weight: 750;
     color: #3a3a3a;
-    font-size: 20px;
+    font-size: 22px;
+    padding: 5px;
     text-decoration: none;
 }
 .main-menu li {
     float:left;
-    padding:12px 31px;
+    padding:10px 20px;
+    list-style: none;
 }
 /********** Logo And Menu Ends **********/
 
 /********** Slider Starts **********/  
 .slider-width{
-    width:100%;
-    height: auto;
+    
+    height: 559px;
+    width: 91%;
+    position: relative;
+    top: 30px;
+    left: 64px;
+    box-shadow: 0px 15px 39px 12px rgb(144, 148, 180);
+
+
 }
 /********** Slider Ends **********/
 
@@ -137,7 +160,7 @@ a:hover
     margin-right:10px;
     background:#fff;
     padding:20px;
-    height:350px;
+    height:455px;
     margin-bottom:30px;
 }
 .event-list{
@@ -145,7 +168,7 @@ a:hover
     margin-right:10px;
     background:#fff;
     padding:20px;
-    height:350px;
+    height:455px;
     margin-bottom:30px;
 }
 .notice-board{
@@ -153,7 +176,7 @@ a:hover
     margin-right:10px;
     background:#fff;
     padding:20px;
-    height:350px;
+    height:455px;
     margin-bottom:30px;
 }
 .our-principal{
@@ -161,7 +184,7 @@ a:hover
     margin-right:10px;
     background:#fff;
     padding:20px;
-    height:350px;
+    height:455px;
     margin-bottom:30px;
 }
 .about-us{
@@ -169,7 +192,7 @@ a:hover
     margin-right:10px;
     background:#fff;
     padding:20px;
-    height:350px;
+    height:455px;
     margin-bottom:30px;
 }
 .certificate{
@@ -177,7 +200,7 @@ a:hover
     margin-right:10px;
     background:#fff;
     padding:20px;
-    height:350px;
+    height:455px;
     margin-bottom:30px;
 }
 .heading-sect{
@@ -268,6 +291,14 @@ a:hover
 /********** Information Ends **********/
 
 /********** Gallery Starts **********/  
+.gallery-head-style{
+    text-align: center;
+
+}
+.gallery{
+    border: 2px solid grey;
+    padding: 20px 40px;
+}
 .gallery-img{
     height:250px;
     width:100%;
@@ -313,16 +344,20 @@ a:hover
 
 /********** Recruiter List Starts **********/  
 .recruiter-head-style{
-    font-size: 28px;
-    color: #4b4848;
-    margin-bottom: 5px;
+    font-family: "Poppins";
+    font-size: 30px;
+    color: #000000;
+    margin-bottom: 9px;
 }
 .recruiter-marquee{
-    height: 100px;
+    height: 120px;
 }
 .recruiter-marquee img{
-    height:80px;
-    width:140px;
+
+    width: 187px;
+    height: auto;
+    padding: 24px;
+    
 }
 /********** Recruiter List Ends **********/
 
@@ -401,3 +436,5 @@ a:hover
     color: red;
 }
 /********** Footer Copyright Ends **********/
+
+

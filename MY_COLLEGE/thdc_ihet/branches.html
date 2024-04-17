@@ -1,47 +1,76 @@
 <!DOCTYPE html>
 <html>
-   <head>
+
+<head>
+
+  <title>Thdc-ihet</title>
+  <link rel="icon" href="/MY_COLLEGE/assets/THDCIHET-LOGO.jpg" type="image/png">
+  <link rel="stylesheet" href="/MY_COLLEGE/style/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      width: 355px;
+      margin-left: 60px;
+      margin-top: 55px;
+      background: #dbe0fec2;
+      padding: 30px 6px 30px 20px;
+    }
+    .card-text{
+      font-family: 'Poppins';
+    }
+
+    .card:hover {
+      box-shadow: 0px 5px 20px 0px #000000;
+    }
+
+
+
+    .img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0px;
+      margin-top: 3px;
+    margin-left: 11px;
+    margin-right: 0px;
+    padding-bottom: 40px;
+    padding-right: 20px;
+      border:2px solid black;
+      background: #8e99bc;
+
+    }
+    .card-body a{
+      text-decoration: none;
+      color:#2e17ff;
+      text-shadow: #c7ff0e;
+      padding: 10px;
+      
+    }
+    .card-text{
+      margin-top: 15px;
+    }
+    a:hover{
+      color: green;
+    }
     
-      <title>Thdc-ihet</title>
-      <link rel="icon" href="/assets/THDCIHET-LOGO.jpg" type="image/png">
-      <link rel="stylesheet" href="/style/style.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <style>
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
-            width: 300px;
-            margin-left: 40px;
-    margin-top: 157px;
-        }
+  </style>
+</head>
 
-        .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
+<body>
+  <!---------- Meta HTML Ends --------->
 
-        .container {
-            padding: 2px 16px;
-        }
-
-        .img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .grid{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0px;
-            margin-top: -36px;
-            margin-left: -30px;
-        }
-    </style>
-   </head>
-   <body>
-<!---------- Meta HTML Ends --------->
-
-<!---------- Top Header Starts --------->
-<!-- <div class="width-100 top-header">
+  <!---------- Top Header Starts --------->
+  <!-- <div class="width-100 top-header">
     <div class="container">
        <div class="width-100">
           <b class="news-list"> NEWS : </b>
@@ -51,77 +80,94 @@
        </div>
     </div>
  </div> -->
- <!---------- Top Header Ends --------->
+  <!---------- Top Header Ends --------->
 
- <!---------- Logo And Main Menu HTML Starts --------->
- <div id="headerContent"></div>
- <script>
-   fetch("header.html")
-     .then(response => response.text())
-     .then(content => {
-       document.getElementById("headerContent").innerHTML = content;
-     });
- </script>
-<br>
+  <!---------- Logo And Main Menu HTML Starts --------->
+  <div id="headerContent"></div>
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(content => {
+        document.getElementById("headerContent").innerHTML = content;
+      });
+  </script>
+  <br>
 
-<h1 style="text-align: center; margin-top: 2px;">ALL BRANCHES</h1>
- <!-- cards -->
-<div class="grid">
- <div class="card" style="width: 18rem;">
-    <img src="/assets/computer-science.jpg" height="280px" width="285px" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"><b style="text-align: center;">Computer Engineering</b></h5>
-      <p class="card-text">Description about Computer Engineering.</p>
-      <a href="/thdc_ihet/cse_faculties.html" class="btn btn-primary">Cse Faculties</a>
-    </div>
+  <h1 style="text-align: center; margin-top: 2px;">ALL BRANCHES</h1>
+  <!-- cards -->
+  <div class="grid">
+    
+      <div class="card">
+        <img src="/MY_COLLEGE/assets/computer-science.jpg" height="280px" width="299px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b style="text-align: center;">Computer Engineering</b></h5>
+          <p class="card-text">Enter the realm where algorithms breathe life into technology and innovation knows no
+            bounds. In CSE, you'll unravel the mysteries of code, shape the digital landscape, and pave the way for a
+            future where software redefines the world.</p>
+          <a href="/MY_COLLEGE/thdc_ihet/cse_faculties.html" class="btn btn-primary">Cse Faculties</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="/MY_COLLEGE/assets/civil_engineering.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>Civil Engineering</b></h5>
+          <p class="card-text">Embark on a journey where structures touch the sky, and infrastructure shapes
+            civilizations. CE is the canvas where architects of tomorrow design bridges, roads, and buildings that stand
+            as testaments to human ingenuity and perseverance.</p>
+          <a href="/MY_COLLEGE/thdc_ihet/coming_soon.html" class="btn btn-primary">Civil Faculties</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="/MY_COLLEGE/assets/ai_ml.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>AI&ML Engineering</b></h5>
+          <p class="card-text">Explore the frontier of Artificial Intelligence and Machine Learning, where innovation
+            merges with computational power. Unleash the potential of data-driven algorithms, shaping a future of
+            intelligent systems and predictive analytics."</p>
+          <a href="/MY_COLLEGE/thdc_ihet/coming_soon.html" class="btn btn-primary">AI&ML Faculties</a>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <img src="/MY_COLLEGE/assets/mechanical.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>Mechanical Engineering</b></h5>
+          <p class="card-text">In the heart of ME lies the essence of innovation – where gears turn dreams into reality
+            and machines dance to the rhythm of progress. Explore the realms of mechanics, design, and manufacturing,
+            and
+            engineer a future powered by creativity and precision.</p>
+          <a href="/MY_COLLEGE/thdc_ihet/coming_soon.html" class="btn btn-primary">Mechanical Faculties</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="/MY_COLLEGE/assets/electrical_engineering.jpg" height="280px" width="285px" class="card-img-top"
+          alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>Electrical Engineering</b></h5>
+          <p class="card-text">Illuminate the path to progress in EE, where electrons dance to the tune of innovation,
+            and
+            circuits form the backbone of modern civilization. Explore the realms of power, control, and automation, and
+            engineer solutions that light up the world.</p>
+          <a href="/MY_COLLEGE/thdc_ihet/coming_soon.html" class="btn btn-primary">Electrical Faculties</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="/MY_COLLEGE/assets/electronics.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>Electronics Engineering</b></h5>
+          <p class="card-text">Dive into the world where signals whisper secrets, circuits weave tales of connectivity,
+            and communication transcends boundaries. ECE is where innovation meets imagination, powering the global
+            exchange of information and ideas.</p>
+          <a href="/MY_COLLEGE/thdc_ihet/coming_soon.html" class="btn btn-primary">Electronics Faculties</a>
+        </div>
+      </div>
+    
   </div>
-
-  <div class="card" style="width: 18rem;">
-    <img src="/assets/civil_engineering.jpg" height="280px" width="285px" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"><b>Civil Engineering</b></h5>
-      <p class="card-text">Description about Civil Engineering.</p>
-      <a href="/thdc_ihet/coming_soon.html" class="btn btn-primary">Civil Faculties</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img src="/assets/ai_ml.jpg" height="280px" width="285px" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"><b>AI&ML Engineering</b></h5>
-      <p class="card-text">Description about AI&ML Engineering.</p>
-      <a href="/thdc_ihet/coming_soon.html" class="btn btn-primary">AI&ML Faculties</a>
-    </div>
-  </div>
- 
-
-  <div class="card" style="width: 18rem;">
-    <img src="/assets/mechanical.jpg" height="280px" width="285px" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"><b>Mechanical Engineering</b></h5>
-      <p class="card-text">Description about Mechanical Engineering.</p>
-      <a href="/thdc_ihet/coming_soon.html" class="btn btn-primary">Mechanical Faculties</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img src="/assets/electrical_engineering.jpg" height="280px" width="285px" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"><b>Electrical Engineering</b></h5>
-      <p class="card-text">Description about Electrical Engineering.</p>
-      <a href="/thdc_ihet/coming_soon.html" class="btn btn-primary">Electrical Faculties</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img src="/assets/electronics.jpg" height="280px" width="285px" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"><b>Electronics Engineering</b></h5>
-      <p class="card-text">Description about ELectronics Engineering.</p>
-      <a href="/thdc_ihet/coming_soon.html" class="btn btn-primary">Electronics Faculties</a>
-    </div>
-  </div>
-
-</div>
 </body>
+
 </html>
