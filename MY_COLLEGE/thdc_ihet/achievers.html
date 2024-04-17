@@ -3,9 +3,16 @@
    <head>
     
       <title>Thdc-ihet</title>
-      <link rel="icon" href="/assets/THDCIHET-LOGO.jpg" type="image/png">
-      <link rel="stylesheet" href="/style/style.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="icon" href="/MY_COLLEGE/assets/THDCIHET-LOGO.jpg" type="image/png">
+      <link rel="stylesheet" href="/MY_COLLEGE/style/style.css">
+      <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <style>
         .card {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -54,78 +61,92 @@
  <!---------- Top Header Ends --------->
 
  <!---------- Logo And Main Menu HTML Starts --------->
- <div class="width-100 header-menu">
+ <!-- <div class="width-100 header-menu">
     <div class="container">
        <div class="logo"> <img class="logo_img" src="/assets/THDCIHET-LOGO.jpg" height="100px" width="150px"> </div>
        <ul class="main-menu">
-          <li><a href="/thdc_ihet/index.html">Home</a></li>
-          <li><a href="/thdc_ihet/aboutUs.html">About us</a></li>
-          <li><a href="/thdc_ihet/login.html">Log In</a></li>
-          <li><a href="/thdc_ihet/achievers.html">Admission</a></li>
-          <li><a href="/thdc_ihet/branches.html">Faculties<ul>
+          <li><a href="/MY_COLLEGE/thdc_ihet/index.html">Home</a></li>
+          <li><a href="/MY_COLLEGE/thdc_ihet/aboutUs.html">About us</a></li>
+          <li><a href="/MY_COLLEGE/thdc_ihet/login.html">Log In</a></li>
+          <li><a href="/MY_COLLEGE/thdc_ihet/achievers.html">Admission</a></li>
+          <li><a href="/MY_COLLEGE/thdc_ihet/branches.html">Faculties<ul>
           </ul></a></li>
-          <li><a href="/thdc_ihet/achievers.html">Achievers</a></li>
-          <li><a href="/thdc_ihet/coming_soon.html">Contact Us</a></li>
+          <li><a href="/MY_COLLEGE/thdc_ihet/achievers.html">Achievers</a></li>
+          <li><a href="/MY_COLLEGE/thdc_ihet/coming_soon.html">Contact Us</a></li>
        </ul>
     </div>
  </div>
-<br>
+<br> -->
+<!--         -->
+
+<!--- new-->
+<div id="headerContent"></div>
+<script>
+   fetch("header.html")
+      .then(response => response.text())
+      .then(content => {
+         document.getElementById("headerContent").innerHTML = content;
+      });
+</script>
+
+
+<!----->
 
 <h1 style="text-align: center; margin-top: 2px;">ALL BRANCHES</h1>
  <!-- cards -->
 <div class="grid">
  <div class="card" style="width: 18rem;">
-    <img src="/assets/computer-science.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+    <img src="/MY_COLLEGE/assets/computer-science.jpg" height="280px" width="285px" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><b style="text-align: center;">Computer Engineering</b></h5>
       <p class="card-text">Description about Computer Engineering.</p>
-      <a href="/thdc_ihet/cse_faculties.html" class="btn btn-primary">Cse Faculties</a>
+      <a href="/MY_COLLEGE/thdc_ihet/cse_faculties.html" class="btn btn-primary">Cse Faculties</a>
     </div>
   </div>
 
   <div class="card" style="width: 18rem;">
-    <img src="/assets/civil_engineering.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+    <img src="/MY_COLLEGE/assets/civil_engineering.jpg" height="280px" width="285px" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><b>Civil Engineering</b></h5>
       <p class="card-text">Description about Civil Engineering.</p>
-      <a href="/thdc_ihet/coming_soon.html" class="btn btn-primary">Civil Faculties</a>
+      <a href="/MY_COLLEGE/thdc_ihet/coming_soon.html" class="btn btn-primary">Civil Faculties</a>
     </div>
   </div>
 
   <div class="card" style="width: 18rem;">
-    <img src="/assets/ai_ml.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+    <img src="/MY_COLLEGE/assets/ai_ml.jpg" height="280px" width="285px" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><b>AI&ML Engineering</b></h5>
       <p class="card-text">Description about AI&ML Engineering.</p>
-      <a href="/thdc_ihet/coming_soon.html" class="btn btn-primary">AI&ML Faculties</a>
+      <a href="/MY_COLLEGE/thdc_ihet/coming_soon.html" class="btn btn-primary">AI&ML Faculties</a>
     </div>
   </div>
  
 
   <div class="card" style="width: 18rem;">
-    <img src="/assets/mechanical.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+    <img src="/MY_COLLEGE/assets/mechanical.jpg" height="280px" width="285px" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><b>Mechanical Engineering</b></h5>
       <p class="card-text">Description about Mechanical Engineering.</p>
-      <a href="/thdc_ihet/coming_soon.html" class="btn btn-primary">Mechanical Faculties</a>
+      <a href="/MY_COLLEGE/thdc_ihet/coming_soon.html" class="btn btn-primary">Mechanical Faculties</a>
     </div>
   </div>
 
   <div class="card" style="width: 18rem;">
-    <img src="/assets/electrical_engineering.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+    <img src="/MY_COLLEGE/assets/electrical_engineering.jpg" height="280px" width="285px" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><b>Electrical Engineering</b></h5>
       <p class="card-text">Description about Electrical Engineering.</p>
-      <a href="/thdc_ihet/coming_soon.html" class="btn btn-primary">Electrical Faculties</a>
+      <a href="/MY_COLLEGE/thdc_ihet/coming_soon.html" class="btn btn-primary">Electrical Faculties</a>
     </div>
   </div>
 
   <div class="card" style="width: 18rem;">
-    <img src="/assets/electronics.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+    <img src="/MY_COLLEGE/assets/electronics.jpg" height="280px" width="285px" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><b>Electronics Engineering</b></h5>
       <p class="card-text">Description about ELectronics Engineering.</p>
-      <a href="/thdc_ihet/coming_soon.html" class="btn btn-primary">Electronics Faculties</a>
+      <a href="/MY_COLLEGE/thdc_ihet/coming_soon.html" class="btn btn-primary">Electronics Faculties</a>
     </div>
   </div>
 
