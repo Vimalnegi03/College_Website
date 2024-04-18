@@ -1,0 +1,87 @@
+<html>
+
+<head>
+
+  <title>Thdc-ihet</title>
+  <link rel="icon" href="/MY_COLLEGE/assets/THDCIHET-LOGO.jpg" type="image/png">
+  <link rel="stylesheet" href="/MY_COLLEGE/style/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 8px;
+            padding: 8px;
+            
+        }
+        .right{
+            border: 2px solid white;
+            margin-left: 74px;
+    padding: 11px;
+    height:400;
+    width:400;
+        }
+        input{
+            width: 362px;
+    height: 40px;
+    padding: 5px;
+    margin: 6px;
+    border-radius: 6px;
+    border: 2px solid black;
+        }
+        textarea {
+            width: 367px;
+    height: 92px;
+    margin: 6px;
+    border-radius: 3px;
+    padding: 5px;
+    border: 2px solid black;
+}
+button{
+    margin-top: 17px;
+    margin-left: 155px;
+    height: 36px;
+    width: 92px;
+    background: #2196f3;
+    color: white;
+    border-radius: 6px;
+    border: 2px solid rgb(17, 175, 207);
+}
+form{
+    box-shadow: inset;
+}
+.center{
+    text-align: center;
+}
+    </style>
+    </head>
+<body>
+    <!---------- Meta HTML Ends --------->
+ 
+    <!---------- Top Header Starts --------->
+    <!-- HTML me -->
+    <div id="headerContent"></div>
+    <script>
+       fetch("header.html")
+          .then(response => response.text())
+          .then(content => {
+             document.getElementById("headerContent").innerHTML = content;
+          });
+    </script>
+ <div class="container">
+    <div><img src="/MY_COLLEGE/assets/contact_us.jpg" alt="" srcset=""></div>
+    <div class="right"><p class="center">For any query, contact us </p>
+
+       <h1 class="center"> Get in touch with us</h1>
+    <form action="">
+        <input type="text" placeholder="Name"><br>
+        <input type="email" placeholder="Email"><br>
+        <input type="number"placeholder="Mobile Number"><br>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Write your query"></textarea><br>
+        <button>Submit</button>
+    </form></div>
+ </div>
