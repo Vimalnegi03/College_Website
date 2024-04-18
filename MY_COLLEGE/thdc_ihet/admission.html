@@ -1,0 +1,197 @@
+<style>
+    .outer-container{
+        
+        width: 70%;
+        border-top: 10px solid blue;
+        position: absolute;
+        top: 60%;
+        left:59%; 
+        transform: translate(-60%, -50%);
+        background-color:f2f2f2;
+        box-shadow: 0 0 7px;
+       }
+    .submit-button{
+        height: 20px;
+        width: 70px;
+        background-color: rgb(27, 145, 224);
+        border-color: rgb(27, 145, 224);
+        border-width: 1px;
+        border-radius: 2px;
+        border-style: solid;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        transition:background-color 0.15;
+        transition: color 0.15s;
+    }  
+    .submit-button:hover{
+        background-color:rgb(11, 119, 190); 
+        color:aliceblue;
+    }
+    .submit-button:active{
+        opacity: 0.8;
+    } 
+    .input-name{
+        padding: 5px;
+        margin-left:40px;
+        
+    }  
+    .heading-1{
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    #long-text {
+  width: 500px; 
+}
+
+
+</style>
+<html>
+    <title>
+        admission form
+    </title>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="outer-container">
+            <img src=""alt="thdc">
+            <h2 class="heading-1">
+                Admission Form
+            </h2>
+            <div class = "form-container">
+                <div class="input-name">
+                    <span>Name of the Candidate:</span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" placeholder="first name">
+                    <span>
+                    <input type="text" placeholder="middle name">
+                    </span>
+                    <span>
+                    <input type="text" placeholder="last name">
+                    </span>
+                </div>
+                <div class="input-name">
+                     <span>Fathers name:</span>
+                     <i class="fa fa-user" aria-hidden="true"></i>
+                     <input type="text" placeholder="first name">
+                     <span>
+                     <input type="text" placeholder="middle name">
+                     </span>
+                     <span>
+                     <input type="text" placeholder="last name">
+                     </span>
+                </div>   
+                <div class="input-name">
+                     <span>Mothers name:</span>
+                     <i class="fa fa-user" aria-hidden="true"></i>
+                     <input type="text" placeholder="first name">
+                     <span>
+                     <input type="text" placeholder="middle name">
+                     </span>
+                     <span>
+                     <input type="text" placeholder="last name">
+                     </span>    
+                </div>
+                <div class="input-name">
+                    <span>Fathers occupation:</span>
+                    <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                    <input type="text" >
+                    <span>department(if in govt. service):
+                    </span>
+                    <span><input type= "text">
+                    </span>
+                </div>
+                <div class="input-name">
+                    <span>Mothers occupation:</span>
+                    <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                    <input type="text" >
+                    <span>department(if in govt. service):
+                    </span>
+                    <span><input type= "text">
+                    </span>
+                </div>
+                <div class = "input-name">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+                <div class = "input-name">
+                    <span>Gender:</span>
+                    <input type="radio" class="radio-button"name="R1">
+                    <label>Male</label>
+                    <input type="radio" class="radio-button"name="R1">
+                    <label>Female</label>
+                </div>
+                <div class = "input-name">
+                    <span>Category:</span>
+                    <select class="category">
+                        <option>select your category</option>
+                        <option>GEN</option>
+                        <option>OBC</option>
+                        <option>SC</option>
+                        <option>ST</option>
+                        <option>EWS</option>
+                        <option>OTHER</option>
+                    </select>  
+                 </div> 
+                 <div class = "input-name">
+                    <span>Academic record:</span>
+                    <br>
+                    <br>
+                    <span>high school:</span>
+                    <label for="year">Year:</label>
+                    <input type="number" id="year" name="year" min="2000" max="2030" step="1">
+                    <span><label for="marks">Marks%:</label></span>
+                    <input type="number">
+                    <br>
+                    <br>
+                    <span>Intermediate:</span>
+                    <label for="year">Year:</label>
+                    <input type="number" id="year" name="year" min="2000" max="2030" step="1">
+                    <span><label for="marks">Marks%:</label></span>
+                    <input type="number">
+                 </div>
+                 <div class = "input-name">
+                    <span>Competition Rank:</span>
+                    <br>
+                    <br>
+                    <span>JEE Main/other Roll No:</span> <input type="number"> 
+                    <span>All India Rank:</span> <input type="number"> 
+                 </div>
+                 <div class = "input-name">
+                    <span>Permanent Address:</span><input type="text" id="long-text" name="long-text">
+                 </div>
+                 <div class = "input-name">
+                    <span>City:</span><input type="text">
+                    <span>Pin:</span><input type="number">
+                    <span>State:</span><input type="text">
+                 </div>
+                 <div class = "input-name">
+                    <span>Phone number:</span>
+                    <i class="fa fa-phone-square" aria-hidden="true"></i>
+                    <input type="number">
+                    <span>Candidate Mobile No:</span>
+                    <i class="fa fa-phone-square" aria-hidden="true"></i>
+                    <input type="number">
+                    <br>
+                    <br>
+                    <span>E-mail:</span>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <input type="text">
+                    <span>Parents Mobile No:</span>
+                    <i class="fa fa-phone-square" aria-hidden="true"></i>
+                    <input type="number">
+
+                 </div>
+                 <div class="input-name">
+                    <button class="submit-button">
+                        SUBMIT
+                    </button>
+                 </div>
+
+            
+        </div>
+    </body>
+</html>
