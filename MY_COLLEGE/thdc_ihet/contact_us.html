@@ -77,11 +77,48 @@ form{
     <div class="right"><p class="center">For any query, contact us </p>
 
        <h1 class="center"> Get in touch with us</h1>
-    <form action="">
-        <input type="text" placeholder="Name"><br>
-        <input type="email" placeholder="Email"><br>
-        <input type="number"placeholder="Mobile Number"><br>
-        <textarea name="" id="" cols="30" rows="10" placeholder="Write your query"></textarea><br>
-        <button>Submit</button>
-    </form></div>
+    <form id="addressForm" action="query_submission.html" method="post">
+        <input type="text" placeholder="Name" required><br>
+        <input type="email" placeholder="Email" required><br>
+        <input type="number"placeholder="Mobile Number" required><br>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Write your query" required></textarea><br>
+        <button  type="submit" class="submit-button" onclick="validateAndSubmit()">Submit</button>
+    </form>
+</div>
  </div>
+ <script>
+ function validateAndSubmit() {
+    var inputs = document.querySelectorAll('input[required]');
+
+    var allFilled = true;
+
+    inputs.forEach(function(input) {
+        if (input.value === '') {
+            allFilled = false;
+        }
+    });
+
+    if (allFilled) {
+        var formData = new FormData(document.getElementById('addressForm'));
+
+        fetch('query_submission.html', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                // Redirect to home page after successful submission
+                window.location.href = 'query_submission.html'; // Replace 'home.html' with your home page URL
+            } else {
+                alert('Submission failed.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        });
+    } else {
+        alert('Please fill in all required fields.');
+    }
+}
+</script>
