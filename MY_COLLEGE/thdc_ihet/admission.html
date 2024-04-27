@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+   <title>Thdc-ihet</title>
+   <link rel="icon" href="/assets/THDCIHET-LOGO.png" type="image/png">
+   <link rel="stylesheet" href="/style/style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            
+            .outer-container{
+        
+                width: 70%;
+                /* border-top: 10px solid blue; */
+                position: absolute;
+                top:  600px;
+                left:59%; 
+                transform: translate(-60%, -50%);
+                background: transparent;
+                /* background-image:ockphoto.com/id/1015284648/photo/buying-tickets-and-making-reservation-for-travel-with-credit-card.jpg?b=1&s=612x612&w=0&k=20&c=QGGgjip38BNnjwAosHyz6VGGxK6cSgvnVLQLMn5XeMw=); */
+             /* background-image: url(https://images.pexels.com/photos/2769188/pexels-photo-2769188.jpeg?auto=compress&cs=tinysrgb&w=600); */
+             /* background-image: url(https://images.pexels.com/photos/5052880/pexels-photo-5052880.jpeg?auto=compress&cs=tinysrgb&w=600);    */
+            background-image: url('/assets/admission_page_background.webp');
+             /* background-image: url(https://media.istockphoto.com/id/1425529463/photo/portrait-of-east-asian-student-with-books-and-backpack-in-college.jpg?b=1&s=612x612&w=0&k=20&c=cemyJYLp7foj6IQfwODIl3juLSirDpGrnmkKGqHpQns=); */
+                background-repeat: no-repeat;
+                background-size: cover;
+                
+                /* background: linear-gradient(to bottom, #ffc0cb, #add8e6); */
+                box-shadow: 0 0 7px;
+               }
+               input{
+                height: 28px;
+    width: 247px;
+    border-radius: 4px;
+               }
+            .submit-button{
+                height: 31px;
+    width: 87px;
+    background-color: rgb(27, 145, 224);
+    border-color: rgb(27, 145, 224);
+    border-width: 1px;
+    border-radius: 4px;
+    border-style: solid;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.15;
+    transition: color 0.15s;
+}
+             
+            .submit-button:hover{
+                background-color:rgb(11, 119, 190); 
+                color:aliceblue;
+            }
+            .submit-button:active{
+                opacity: 0.8;
+            } 
+            .input-name{
+                padding: 5px;
+                margin-left:40px;
+        
+            }  
+            .heading-1{
+                display: flex;
+                justify-content: center; 
+                align-items: center; 
+            }
+        
+            #long-text {
+          width: 500px; 
+        }
+        .hidden {
+    display: none;
+}
+        
+        
+        </style>
+    </head>
+    <body >
+        <div id="headerContent"></div>
+        <script>
+           fetch("header.html")
+              .then(response => response.text())
+              .then(content => {
+                 document.getElementById("headerContent").innerHTML = content;
+              });
+        </script>
+        <div class="outer-container">
+            <form id="addressForm" action="query_submission.html" method="post">
+            <img src="/assets/THDCIHET-LOGO.png"alt="thdc" height="100px" width="100px">
+            <h2 class="heading-1"style="color: black;">
+                Admission Form
+            </h2>
+            <div class = "form-container">
+
+                <div class="input-name">
+                    <span style="color: black;">Name of the Candidate:</span>
+                    <i class="fa fa-user" aria-hidden="true" style="color: black;"></i>
+                    <input type="text" placeholder="Name" required>
+                    <!-- <span>
+                    <input type="text" placeholder="middle name">
+                    </span>
+                    <span>
+                    <input type="text" placeholder="last name" required>
+                    </span> -->
+                </div>
+                <div class="input-name">
+                     <span style="color: black;">Fathers name:</span>
+                     <i class="fa fa-user" aria-hidden="true" style="color: black;"></i>
+                     <input type="text" placeholder="Fathers name" required>
+                     <!-- <span>
+                     <input type="text" placeholder="middle name" >
+                     </span>
+                     <span>
+                     <input type="text" placeholder="last name" required>
+                     </span> -->
+                </div>   
+                <div class="input-name">
+                     <span style="color:  black;;">Mothers name:</span>
+                     <i class="fa fa-user" aria-hidden="true" style="color: black;"></i>
+                     <input type="text" placeholder="Mothers name:"required>
+                     <!-- <span>
+                     <input type="text" placeholder="middle name" style="color: #031B88;">
+                     </span>
+                     <span>
+                     <input type="text" placeholder="last name"required>
+                     </span>     -->
+                </div>
+                <div class="input-name">
+                    <span style="color: black;">Fathers occupation:</span>
+                    <span><i class="fa fa-briefcase" aria-hidden="true" style="color: black;"></i></span>
+                    <!-- <input type="text" >
+                    <span style="color: #031B88;">department(if in govt. service):
+                    </span> -->
+                    <span><input type= "text">
+                    </span>
+                </div>
+                <div class="input-name">
+                    <span style="color: black;">Mothers occupation:</span>
+                    <span><i class="fa fa-briefcase" aria-hidden="true" style="color: black;"></i></span>
+                    <!-- <input type="text" > -->
+                    <!-- <span style="color: #031B88;">department(if in govt. service):
+                    </span> -->
+                    <span><input type= "text">
+                    </span>
+                </div>
+                <div class = "input-name">
+                    <label for="dob" style="color: black;">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob"required>
+                </div>
+                <div class = "input-name">
+                    <span style="color: black;">Gender:</span>
+                    <input type="radio" class="radio-button"name="R1">
+                    <label style="color: black;">Male</label>
+                    <input type="radio" class="radio-button"name="R1">
+                    <label style="color: black;">Female</label>
+                </div>
+                <div class = "input-name">
+                    <span style="color: black;">Category:</span>
+                    <select class="category">
+                        <option style="color: black;" >select your category</option>
+                        <option style="color: black;">GEN</option>
+                        <option style="color: black;">OBC</option>
+                        <option style="color: black;">SC</option>
+                        <option style="color: black;">ST</option>
+                        <option style="color: black;">EWS</option>
+                        <option style="color: black;">OTHER</option>
+                    </select>  
+                 </div> 
+                 <div class = "input-name">
+                    <span style="color: black;">Academic record:</span>
+                    <br>
+                    <br>
+                    <span style="color: black;">high school:</span>
+                    <label for="year" style="color: black;">Year:</label>
+                    <input type="number" id="year" name="year" min="2000" max="2030" step="1" required>
+                    <span><label for="marks" style="color: black;">Marks%:</label></span>
+                    <input type="number"required>
+                    <br>
+                    <br>
+                    <span style="color: black;">Intermediate:</span>
+                    <label for="year" style="color: black;">Year:</label>
+                    <input type="number" id="year" name="year" min="2000" max="2030" step="1"required>
+                    <span><label for="marks" style="color: black;">Marks%:</label></span>
+                    <input type="number"required>
+                 </div>
+                 <div class = "input-name">
+                    <span style="color: black;">Competition Rank:</span>
+                    <br>
+                    <br>
+                    <span style="color: black;">JEE Main/other Roll No:</span> <input type="number"required> 
+                    <span style="color: black;">All India Rank:</span> <input type="number"required> 
+                 </div>
+                 <div class = "input-name">
+                    <span style="color: black;">Permanent Address:</span><input type="text" id="long-text" name="long-text"required>
+                 </div>
+                 <div class = "input-name">
+                    <span style="color: black;">City:</span><input type="text" required>
+                    <span style="color: black;">Pin:</span><input type="number"required>
+                    <span style="color: black;">State:</span><input type="text"required>
+                 </div>
+                 <div class = "input-name">
+                    <span style="color: black";>Phone number:</span>
+                    <i class="fa fa-phone-square" aria-hidden="true" style="color: black;"></i>
+                    <input type="number"required>
+                    <span style="color: black;">Candidate Mobile No:</span>
+                    <i class="fa fa-phone-square" aria-hidden="true" style="color: black;"></i>
+                    <input type="number"required>
+                    <br>
+                    <br>
+                    <span style="color: black;">E-mail:</span>
+                    <i class="fa fa-envelope" aria-hidden="true" style="color: black;"></i>
+                    <input type="text" required>
+                    <span style="color: black;">Parents Mobile No:</span>
+                    <i class="fa fa-phone-square" aria-hidden="true" style="color: black;"></i>
+                    <input type="number" required>
+
+                 </div>
+                 <div class="input-name">
+                    <button type="submit" class="submit-button" onclick="validateAndSubmit()" >
+                        SUBMIT
+                    </button>
+                 </div>
+               
+                </form>
+        </div>
+        <script>
+         
+    // Here you can add the functionality for form submission
+    // For this example, let's just display a success message and redirect to the home page after 2 seconds
+
+    // Display success message
+    
+    function validateAndSubmit() {
+            var inputs = document.querySelectorAll('input[required]');
+
+            var allFilled = true;
+
+            inputs.forEach(function(input) {
+                if (input.value === '') {
+                    allFilled = false;
+                }
+            });
+
+            if (allFilled) {
+                var formData = new FormData(document.getElementById('addressForm'));
+
+                fetch('query_submission.html', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Redirect to home page after successful submission
+                        window.location.href = 'query_submission.html'; // Replace 'home.html' with your home page URL
+                    } else {
+                        alert('Submission failed.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                });
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+        </script>
+</html>

@@ -193,10 +193,10 @@
 
             // Add additional fields based on user type
             if (userType === 'student') {
-                additionalFields.innerHTML = `
-                    <input type="text" id="studentId" name="studentId" placeholder="Student ID">
-                    <input type="text" id="major" name="major" placeholder="Major">
-                `;
+                // additionalFields.innerHTML = `
+                //     <input type="text" id="studentId" name="studentId" placeholder="Student ID">
+                //     // {% comment %} <input type="text" id="major" name="major" placeholder="Major"> {% endcomment %}
+                // `;
             } else if (userType === 'faculty') {
                 additionalFields.innerHTML = `
                     <input type="text" id="facultyId" name="facultyId" placeholder="Faculty ID">
