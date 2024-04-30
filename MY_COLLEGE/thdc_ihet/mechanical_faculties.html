@@ -1,0 +1,171 @@
+<html>
+
+<head>
+
+  <title>Thdc-ihet</title>
+  <link rel="icon" href="/assets/THDCIHET-LOGO.jpg" type="image/png">
+  <link rel="stylesheet" href="/style/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/76c16f6ea7.js" crossorigin="anonymous"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      width: 355px;
+      margin-left: 60px;
+      margin-top: 55px;
+      background: #dbe0fec2;
+      padding: 30px 6px 30px 20px;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+
+
+    .img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0px;
+      margin-top: 36px;
+      margin-left: -30px;
+      margin-left: 11px;
+      margin-right: 0px;
+      padding-bottom: 40px;
+      padding-right: 20px;
+      border: 2px solid black;
+      background: #8e99bc;
+    }
+
+    .card-body a {
+      text-decoration: none;
+      color: #2e17ff;
+      text-shadow: #c7ff0e;
+    }
+    i{
+      margin-right: 14px;
+    margin-top: 8px;
+    }
+
+    a:hover {
+      color: green;
+    }
+    .card-title{
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!---------- Meta HTML Ends --------->
+
+  <!---------- Top Header Starts --------->
+  <!-- <div class="width-100 top-header">
+    <div class="container">
+       <div class="width-100">
+          <b class="news-list"> NEWS : </b>
+          <marquee class="headquote">
+             My college: Intelligence plus curiosity-that is the root of true education.
+          </marquee>
+       </div>
+    </div>
+ </div> -->
+  <!---------- Top Header Ends --------->
+
+  <!---------- Logo And Main Menu HTML Starts --------->
+  <div id="headerContent"></div>
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(content => {
+        document.getElementById("headerContent").innerHTML = content;
+      });
+  </script>
+
+  <h1 style="text-align: center;">FACULTIES</h1>
+
+  
+  <div class="grid">
+      <div class="card" style="width: 18rem;">
+        <img src="/assets/Himanshu.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>Mr. Himanshu Nautiyal </b></h5>
+          <p class="card-text">Assistant Professor & HOD</p>
+        <p>  <i class="fa-solid fa-book-open"></i> Ph.D (Pursuing), M.Tech </p>
+        <p><i class="fa-solid fa-lightbulb"></i> Hydraulic machines, Renewable energy technologies, Life cycle Assesment </p>
+        <p><i class="fa-solid fa-envelope"></i>himanshu@thdcihet.ac.in</p>
+        </div>
+      </div>
+    <div class="card" style="width: 18rem;">
+      <img src="/assets/atulesh.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><b style="text-align: center;">Mr. Atulesh Dabral</b></h5>
+        <p class="card-text">Assistant Professor</p>
+        <p>  <i class="fa-solid fa-book-open"></i>  M.Tech. in Thermal Engineering </p>
+        <p><i class="fa-solid fa-lightbulb"></i>Solar Energy, computational Fluid Dynamics </p>
+        <p><i class="fa-solid fa-envelope"></i>atulesh@thdcihet.ac.in</p>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img src="/assets/dasrath.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><b>Mr. Dashrath Singh Kathait</b></h5>
+        <p class="card-text">Assistant Professor</p>
+        <p>  <i class="fa-solid fa-book-open"></i>   M.Tech in Thermal Engineering   </p>
+        <p><i class="fa-solid fa-lightbulb"></i>Thermal Engineering, Renewable Energy</p>
+        <p><i class="fa-solid fa-envelope"></i>dashrath@thdcihet.ac.in</p>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img src="/assets/Rajeev.jpeg" height="280px" width="285px" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><b>Mr. Rajeev Rawat </b></h5>
+        <p class="card-text">Assistant Professor</p>
+        <p>  <i class="fa-solid fa-book-open"></i> MTech( Thermal Engineering, Renewable Energy)</p>
+        <p><i class="fa-solid fa-lightbulb"></i> Supply Chain Management, Renewable Energy technologies, Modeling and Simulation. </p>
+        <p><i class="fa-solid fa-envelope"></i> rajeev@thdcihet.ac.in</p>
+      </div>
+    </div>
+
+
+    <div class="card" style="width: 18rem;">
+      <img src="/assets/Tirath.jpg" height="280px" width="285px" class="card-img-top"
+        alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><b>Mr. TIRATH SINGH </b></h5>
+        <p class="card-text">Assistant Professor</p>
+        <p>  <i class="fa-solid fa-book-open"></i> M.Tech ( Manufacturing Engineering and Management)  </p>
+        <p><i class="fa-solid fa-lightbulb"></i> Materials Science, Advanced Manufacturing Processes </p>
+        <p><i class="fa-solid fa-envelope"></i>tirath@thdcihet.ac.in</p>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img src="/assets/Alok-Dhaundiyal.jpg" height="280px" width="285px" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><b>Dr. Alok Dhaundiyal</b></h5>
+        <p class="card-text">Assistant Professor</p>
+        <p>  <i class="fa-solid fa-book-open"></i>  D.Eng (Hungarian University of Agriculture and Life Science, Godollo, Pest County, Hungary) Post doc (Centre for Energy Research, Hungarian) </p>
+        <p><i class="fa-solid fa-lightbulb"></i>Modelling and Simulation of Energy System, Thermal Application of Renewable Energy Sources, and Dosimetry.  </p>
+        <p><i class="fa-solid fa-envelope"></i>alok@thdcihet.ac.in</p>
+      </div>
+    </div>
+
+  </div>
+</body>
