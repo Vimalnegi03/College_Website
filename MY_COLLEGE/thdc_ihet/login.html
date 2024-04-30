@@ -13,6 +13,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
+        body{
+            background-image: url("/assets/log.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         form {
             margin: 25px auto;
             padding: 50px 30px;
@@ -166,7 +171,7 @@
             });
     </script>
     <div id="headerContent"></div>
-
+<div class="body">
     <form id="registrationForm" onsubmit="return submitForm()">
         <h2>User Registration</h2>
         <div class="user-type-buttons">
@@ -182,7 +187,7 @@
         </div>
         <input type="submit" value="Register">
     </form>
-
+</div>
     <script>
         function selectUserType(userType) {
             document.getElementById('userType').value = userType;
@@ -233,6 +238,7 @@
             return false;
         }
     </script>
+    </div>
 </body>
 
 </html>
